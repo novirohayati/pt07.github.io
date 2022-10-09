@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title>Single Page Application using JavaScript</title>
+	</head>	
+	<script>
+	var pages = {
+		'home' : `Novi Rohayati 32211523. This is our home page!<br/><br/><img src='JPG.jpg' style='width:250px;' />`,
+		'aboutus' : `Our About Us page. <br><font size="5"> Hallo, Perkenalkan saya Novi Rohayati saya lahir di Cirebon, saya lulusan MAN 1 Kota Cirebon. Dan sekarang saya sedang berkuliah di STMIK IKMI Cirebon dengan mengambil jurusan D3 Komputerisasi Akuntansi. <br><br> Hobby <br> a likes: kpop, drakor, music, good at fangirling. </font><br><br/><br/`,
+		'contact' : `Our Contact Us page <br><font size="5"> https://instagram.com/novirhyt_?igshid=YmMyMTA2M2Y=<br/><br/>`
+	};
+
+	function getPageContent(page){
+		var contentToReturn;
+		switch(page){
+			case 'home':
+				contentToReturn = pages.home;
+				break;
+			case 'aboutus':
+				contentToReturn = pages.aboutus;
+				break;
+			case 'services':
+				contentToReturn = pages.services;
+				break;
+			case 'contact':
+				contentToReturn = pages.contact;
+				break;
+			default:
+				contentToReturn = pages.home;
+				break;				
+		}
+		document.getElementById('content').innerHTML = contentToReturn; 
+	}
+	</script>
+<body onload="getPageContent('home')">
+
+	<div style="width:10%; float: left;background: #eee;height: 100%;">
+		<ul>
+			<li style="line-height: 50px;">
+				<a href="#" onclick="getPageContent('home')">
+					Home
+				</a>
+			</li>
+			<li style="line-height: 50px;">
+				<a href="#" onclick="getPageContent('aboutus')">
+					About Us
+				</a>
+			</li>
+			<li style="line-height: 50px;">
+				<a href="#" onclick="getPageContent('contact')">
+					Contact
+				</a>
+			</li>
+		</ul>
+
+	</div>
+<div style="width: 90%;float: right; background: #999;color:#fff; height: 100%;font-size: 50px;"><p style="margin-left: 50px;" id="content"><p></div>
+</body>
+
+</html>
